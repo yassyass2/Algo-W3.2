@@ -23,12 +23,12 @@ public class Stack<T> : IStack<T>
 
     public T? Peek()
     {
-        return Index > -1 ? arr[Index] : null;
+        return Index > -1 ? arr[Index] : default(T);
     }
 
     public T? Pop()
     {
-        if (index < 0) return null;
+        if (index < 0) return default(T);
         var temp = arr[Index];
         arr[Index] = default(T);
         Index--;
