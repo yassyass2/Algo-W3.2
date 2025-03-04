@@ -11,26 +11,33 @@ public class Stack<T> : IStack<T>
     public int Size { get; }
 
     public T[] arr { get; }
+    public int Index { get; set; }
 
     public Stack(int size = 4)
     {
         Size = size;
         Count = 0;
         arr = new T[4];
+        Index = -1;
     }
 
     public T? Peek()
     {
-        throw new NotImplementedException();
+        return arr[Index];
     }
 
     public T? Pop()
     {
-        throw new NotImplementedException();
+        var temp = arr[Index];
+        arr[Index] = default(T);
+        Index--;
+        Count--;
+        return temp;
     }
 
     public void Push(T Item)
     {
-        throw new NotImplementedException();
+        arr[++Index] = Item;
+        Count++;
     }
 }
