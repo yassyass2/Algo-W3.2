@@ -38,6 +38,7 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
+        if (Index == Size-1) return;
         arr[++Index] = Item;
         Count++;
     }
