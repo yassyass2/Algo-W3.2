@@ -6,7 +6,7 @@ public class Stack<T> : IStack<T>
 
     public bool Full => Count == Size;
 
-    public int Count { get; }
+    public int Count { get; set; }
 
     public int Size { get; }
 
