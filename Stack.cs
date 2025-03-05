@@ -38,16 +38,14 @@ public class Stack<T> : IStack<T>
     public void Push(T Item)
     {
         if (Full){
-            int newSize = Size * 2;
-            T[] newArr = new T[newSize];
-
+            T[] newArr = new T[Size+1];
             for (int i = 0; i < Size; i++)
             {
                 newArr[i] = arr[i];
             }
 
             arr = newArr;
-            Size = newSize;
+            Size++;
         }
         arr[++Index] = Item;
         Count++;
