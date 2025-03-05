@@ -10,8 +10,8 @@ public class Stack<T> : IStack<T>
 
     public int Size { get; }
 
-    private T[] arr { get; }
-    private int Index { get; set; }
+    public T[] arr { get; }
+    public int Index { get; set; }
 
     public Stack(int size = 4)
     {
@@ -41,5 +41,4 @@ public class Stack<T> : IStack<T>
         arr[Index] = Item;
         Count++;
     }
-
 }
