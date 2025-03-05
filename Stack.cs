@@ -17,7 +17,7 @@ public class Stack<T> : IStack<T>
     {
         Size = size;
         Count = 0;
-        arr = new T[4];
+        arr = new T[size];
         Index = -1;
     }
 
