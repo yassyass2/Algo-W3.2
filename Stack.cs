@@ -10,8 +10,8 @@ public class Stack<T> : IStack<T>
 
     public int Size { get; }
 
-    public T[] arr { get; }
-    public int Index { get; set; }
+    private T[] arr { get; }
+    private int Index { get; set; }
 
     public Stack(int size = 4)
     {
@@ -19,7 +19,6 @@ public class Stack<T> : IStack<T>
         Count = 0;
         arr = new T[size];
         Index = -1;
-
     }
 
     public T? Peek()
@@ -39,7 +38,7 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
-        if (Index + 1 >= Size) return;
+        if (Full) return;
         arr[++Index] = Item;
         Count++;
     }
