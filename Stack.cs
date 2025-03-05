@@ -38,7 +38,11 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
-        if (Index+1 >= Size) return;
+        if (Index + 1 >= arr.Length) return;
+        /* {
+            Array.Resize(ref arr, arr.Length * 2);
+        } */
+
         arr[++Index] = Item;
         Count++;
     }
