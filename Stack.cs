@@ -30,7 +30,6 @@ public class Stack<T> : IStack<T>
     {
         if (Index < 0) return default(T);
         T temp = arr[Index];
-        arr[Index] = default(T);
         Index--;
         Count--;
         return temp;
