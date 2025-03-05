@@ -31,7 +31,6 @@ public class Stack<T> : IStack<T>
     {
         if (Index < 0 || Index > Count-1) return default(T);
         T temp = arr[Index];
-        arr[Index] = default(T);
         Index = Index - 1 >= 0 ? Index -1 : Size-1;
         Count--;
         return temp;
@@ -39,9 +38,9 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
-        if (Index + 1 >= Size) return;
+        Index = Index + 1 < Size ? Index + 1 : 0;
 
-        arr[++Index] = Item;
+        arr[Index] = Item;
         Count++;
     }
 }
