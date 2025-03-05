@@ -29,7 +29,7 @@ public class Stack<T> : IStack<T>
 
     public T? Pop()
     {
-        if (Index < 0 || Index > Size-1) return default(T);
+        if (Index < 0 || Index >= Size) throw new InvalidOperationException("Invalid index or empy Array");
         T temp = arr[Index];
         arr[Index] = default(T);
         Index--;
@@ -39,10 +39,8 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
-        if (Index + 1 >= Size) return;
-        Index++;
-
-        arr[Index] = Item;
+        if (Index + 1 >= Size) throw new InvalidOperationException("No space left in the stack.");;
+        arr[++Index] = Item;
         Count++;
     }
 }
