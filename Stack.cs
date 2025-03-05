@@ -19,17 +19,18 @@ public class Stack<T> : IStack<T>
         Count = 0;
         arr = new T[size];
         Index = -1;
+
     }
 
     public T? Peek()
     {
-        return Index > -1 ? arr[Index] : default(T);
+        return Index > -1 && Index < Size ? arr[Index] : default(T);
     }
 
     public T? Pop()
     {
         if (Index < 0 || Index >= Size) return default(T);
-        var temp = arr[Index];
+        T temp = arr[Index];
         arr[Index] = default(T);
         Index--;
         Count--;
