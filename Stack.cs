@@ -28,7 +28,7 @@ public class Stack<T> : IStack<T>
 
     public T? Pop()
     {
-        if (Index < 0) return default(T);
+        if (Index < 0 || Index > Count-1) return default(T);
         T temp = arr[Index];
         arr[Index] = default(T);
         Index--;
@@ -39,8 +39,7 @@ public class Stack<T> : IStack<T>
     public void Push(T Item)
     {
         if (Full) return;
-        Index++;
-        arr[Index] = Item;
+        arr[++Index] = Item;
         Count++;
     }
 }
