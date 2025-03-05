@@ -30,6 +30,7 @@ public class Stack<T> : IStack<T>
     {
         if (Index < 0) return default(T);
         T temp = arr[Index];
+        arr[Index] = default(T);
         Index--;
         Count--;
         return temp;
@@ -37,9 +38,14 @@ public class Stack<T> : IStack<T>
 
     public void Push(T Item)
     {
-        if (Index + 1 >= Size) return;
-        Index++;
-        arr[Index] = Item;
+        if (Full){
+            Console.WriteLine("is vol");
+            return;
+        }
+
+        Console.WriteLine($"Before Push -> Index: {Index}, Count: {Count}");
+        arr[++Index] = Item;
         Count++;
+        Console.WriteLine($"After Push -> Index: {Index}, Count: {Count}, arr[{Index}]: {arr[Index]}");
     }
 }
