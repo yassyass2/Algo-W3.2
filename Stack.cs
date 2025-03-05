@@ -40,7 +40,7 @@ public class Stack<T> : IStack<T>
     {
         Index = Index + 1 < Size ? Index + 1 : 0;
 
-        arr[++Index] = Item;
+        arr[Index] = Item;
         Count++;
     }
 }
