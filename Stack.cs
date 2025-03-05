@@ -29,7 +29,7 @@ public class Stack<T> : IStack<T>
 
     public T? Pop()
     {
-        if (Index < 0) return default(T);
+        if (Index < 0 || Index > Count-1) return default(T);
         T temp = arr[Index];
         arr[Index] = default(T);
         Index = Index - 1 >= 0 ? Index -1 : Size-1;
