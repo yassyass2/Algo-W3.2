@@ -41,4 +41,5 @@ public class Stack<T> : IStack<T>
         arr[Index] = Item;
         Count++;
     }
+
 }
